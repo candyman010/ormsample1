@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Home</a>|<a class="navbar-brand" href="display">Display</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="display">Display</a>
+        </li>
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="#">Pricing</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+<!--        </li>-->
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--<a href="/">Home</a>-->
+<form method="post">
+    {% csrf_token %}
+      <h1 align="center">Update Game Data</h1>
+  <table class="table table-dark table-striped" align="center" bgcolor="bg-black" cellpadding="10px" border="5px">
+    <tr>
+        <td>Game Name</td>
+        <td><input type="text" name="game-name" value="{{ data.Game_Name }}"></td>
+    </tr>
+      <tr>
+          <td>Player Name : </td>
+          <td><input type="text" name="player-name" value="{{ data.Player_name }}"></td>
+      </tr>
+      <tr><td>Game Type : </td>
+          <td><select name="ddl-game-type" id="">
+              <option selected>{{ data.Game_type }}</option>
+              <option value="indoor">Indoor</option>
+              <option value="outdoor">Outdoor</option>
+          </select></td>
+      </tr>
+      <tr>
+          <td>Player Age : </td>
+          <td><input type="text" name="player-age" value="{{ data.Player_age }}"></td>
+      </tr>
+      <tr>
+          <td>Player City : </td>
+          <td><input type="text" name="player-city" value="{{ data.Player_city }}"></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><input type="submit" name="tb-submit"></td>
+      </tr>
+
+
+  </table>
+</form>
+
+</body>
+</html>
